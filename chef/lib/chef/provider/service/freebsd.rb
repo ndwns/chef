@@ -105,6 +105,7 @@ class Chef
         end
 
         def read_rc_conf
+          return [] unless ::File.exists?("/etc/rc.conf")
           ::File.open("/etc/rc.conf", 'r') { |file| file.readlines }
         end
 
